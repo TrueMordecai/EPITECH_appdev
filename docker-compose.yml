@@ -1,0 +1,35 @@
+version: '3.3'
+services:
+  backend:
+    build:
+      context: ./server # spécifie le chemin du contexte de construction
+      dockerfile: Dockerfile # spécifie le nom du fichier Dockerfile
+    ports:
+      - 8080:3000
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7.22
+    restart: always 
+    environment:
+      MYSQL_DATABASE: dashdb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - .appdev:/var/lib/mysqle:rw
+    ports:
+      - 3306:33060
+    user: mysql
+  
+  client:
+    build:
+      context: ./client # spécifie le chemin du contexte de construction
+      dockerfile: Dockerfile # spécifie le nom du fichier Dockerfile
+    ports:
+      - 3000:3000 
+    volumes:
+      - .:/app

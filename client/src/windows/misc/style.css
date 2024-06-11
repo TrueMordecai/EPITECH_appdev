@@ -1,0 +1,48 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 20% 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "bg Normal Normal"
+      "bg Normal Normal"
+      "bg Other Other";
+  }
+  .bg {
+    grid-area: bg;
+    width: 400;
+  }
+  .Normal {
+    grid-area: Normal;
+    width: 400;
+  }
+  .Other {
+    grid-area: Other;
+  }
+  
+  img {
+    height: 100%;
+  }
+  
+  .element {
+    padding-left: 10px;
+  }
+  .Normal label {
+    position: relative;
+    display: block;
+    text-align: left;
+  }
+  
+    .Normal label::before {
+        content: "";
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+  
+  .Normal textarea {
+    width: 100%;
+  }
+  
