@@ -1,14 +1,15 @@
 ## Description
 
 This project is about showing widgets.
-A widgets show data personalized by user
+A widgets show data personalized by user that are stocked in databases. 
+There is actually 2 widget. (Cats and League of Legends widgets)
 
 ## Usage
 
 > ./sudo docker-compose up --build
 
 
-## Warning 
+## Warning
 
 Due to recent changes to league of legends API, the profile widget that target a player don't work. However the widget to get the rank One work but you must had your League API KEY
 
